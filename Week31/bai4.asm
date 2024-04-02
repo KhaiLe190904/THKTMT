@@ -11,16 +11,14 @@ quit:  li $v0, 10 #terminate
        syscall 
 endmain: 
 #---------------------------------------------------------------------
-- 
 #Procedure WARP: assign value and call FACT 
 #---------------------------------------------------------------------
-- 
 WARP:  sw $fp, -4($sp) #save frame pointer (1) 
        addi $fp,$sp, 0 #new frame pointer point to the top (2) 
        addi $sp,$sp, -8 #adjust stack pointer (3) 
        sw $ra, 0($sp) #save return address (4) 
  
-       li $a0,6 #load test input N 
+       li $a0, 3 #load test input N 
        jal FACT #call fact procedure 
        nop 
  
