@@ -46,14 +46,7 @@ print:
     lw $a0, 4($sp) # $a0 = min
     syscall
 quit: 
-    lw $s7, 16($sp)
-    lw $s6, 20($sp)
-    lw $s5, 24($sp)
-    lw $s4, 28($sp)
-    lw $s3, 32($sp)
-    lw $s2, 36($sp)
-    lw $s1, 40($sp)
-    lw $s0, 44($sp)
+    addi $sp, $sp, 48
     li $v0, 10 #terminate 
     syscall 
 endmain: 
