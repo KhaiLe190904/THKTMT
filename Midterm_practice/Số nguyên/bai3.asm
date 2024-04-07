@@ -31,7 +31,7 @@ endmain:
    li $v0, 10
    syscall 
 checksnt:
-   bgt $s0, $s2, endmain # m > n thì dừng
+   bge $s0, $s2, endmain # m > n thì dừng
    addi $s0, $s0, 1 # tăng m->m+1 (vòng lặp đầu là chạy từ m)
    li $t0, 1 # khởi tạo i=1
    li $t1, 0 # khởi tạo đếm = 0
@@ -45,7 +45,7 @@ loop:
    addi $t1, $t1, 1
    j loop
 endloop:
-   beq $t1, $s3, printsnt # $t1=0 thì n là số nguyên tố
+   beq $t1, $s3, printsnt # $t1 = 1 thì n là số nguyên tố
    j checksnt
 printsnt:
    li $v0, 4
