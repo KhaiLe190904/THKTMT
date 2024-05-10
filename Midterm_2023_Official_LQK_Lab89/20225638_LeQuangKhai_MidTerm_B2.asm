@@ -15,7 +15,7 @@ main:
    add $a1, $zero, $v0 		# length = $a1
    addi $t0, $zero, 0 		# gán i = 0
 read:
-   beq $t0, $a1, end_read 	# end loop after reaching the length of the array
+   bge $t0, $a1, end_read 	# end loop after reaching the length of the array
    la $a0, messenger2
    li $v0, 4
    syscall

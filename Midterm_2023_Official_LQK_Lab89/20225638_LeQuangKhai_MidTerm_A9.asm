@@ -13,7 +13,7 @@ main:
     syscall
     move $s1, $v0 # $s1 = n
     li $s2, 10    # $s2 = 10
-    blt $s1, $s2, end_main_sai
+    blt $s1, $0, end_main_sai
     li $s3, 2     # $s3 = 2
     li $s4, 0 # sumchan=0
     li $s5, 0 # sumle=0
